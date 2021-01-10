@@ -1,0 +1,22 @@
+ref: 
+https://topdev.vn/blog/unit-test-la-gi/
+
+- Một Unit là một thành phần PM nhỏ nhất mà ta có thể kiểm tra được 
+như các hàm (Function), thủ tục (Procedure), lớp (Class), hoặc các phương thức (Method).
+
+- Assertion: Là một phát biểu mô tả các công việc kiểm tra cần tiến hành, 
+thí dụ: AreEqual(), IsTrue(), IsNotNull()… Mỗi một UT gồm nhiều assertion
+
+- Test Point: Là một đơn vị kiểm tra nhỏ nhất, chỉ chứa đơn giản một assertion nhằm khẳng định tính đúng đắn của một chi tiết mã nào đó.
+
+- Test Case : gồm nhiều Test point
+
+- Test Suite: Là một tập hợp các test case định nghĩa cho từng module hoặc hệ thống con.
+
+- Regression Testing (hoặc Automated Testing) :  Là phương pháp kiểm nghiệm tự động sử dụng một phần mềm đặc biệt
+
+- Production Code: Phần mã chính của ứng dụng được chuyển giao cho khách hàng.
+
+- Unit Testing Code: Phần mã phụ để kiểm tra mã ứng dụng chính, không được chuyển giao cho khách hàng.
+
+- Unit Test có 3 trạng thái cơ bản : Fail (trạng thái lỗi),Ignore (tạm ngừng thực hiện),Pass (trạng thái làm việc)
