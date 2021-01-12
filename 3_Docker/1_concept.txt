@@ -1,4 +1,5 @@
 ref:
+https://vsudo.net/blog/docker-toan-tap.html 
 https://topdev.vn/blog/docker-la-gi/
 
 + Docker Engine
@@ -24,3 +25,5 @@ hoặc các bản images đã được cài đặt chỉnh sửa theo nhu cầu 
 + Images: là OS, một ứng dụng đã được cài đặt và đóng gói. Image chỉ có quyền đọc.
 + Container là bản thực thể của một image, được clone ra từ image, mọi người sẽ sử dụng và làm việc trên container là chính
 + Registry (Docker Hub) nằm ở server internet, còn images và container nằm ở máy người dùng.
+
++ microsoft Hyper-V 

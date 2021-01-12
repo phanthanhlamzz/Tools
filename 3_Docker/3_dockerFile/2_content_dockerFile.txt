@@ -1,0 +1,49 @@
+Trong Dockerfile, có một số điểm mà các bạn cần phải biết với những chỉ thị như sau:
+
++ FROM
+FROM được dùng để thiết lập image cơ sở cho chỉ dẫn tiếp theo. Dockerfile phải có chỉ thị FROM với tên image hợp lệ là chỉ thị đầu tiên.
+FROM ubuntu
+FROM tecadmin/ubuntu-ssh:16.04
+
++LABEL
+Sử dụng label, bạn có thể tổ chức các image đúng cách. Nó cực kỳ hữu ích để thiết lập địa chỉ nhà phát triển, 
+tên nhà cung cấp, phiên bản image, ngày phát hành,… Dòng này phải bắt đầu bằng từ khóa LABEL
+LABEL maintainer="quangvublog@gmail.com"
+LABEL vendor="Quang Vu Blog"
+LABEL com.example.version="1.1.1"
+
++RUN
+Dùng chỉ thị RUN, bạn có thể chạy bất kỳ lệnh nào tới image trong thời gian build. 
+Ví dụ, bạn có thể cài đặt các package bắt buộc trong thời gian build.
+RUN apt-get update 
+RUN apt-get install -y apache2 automake build-essential curl
+Hoặc sử dụng chạy một chỉ thị RUN như sau:
+RUN apt-get update && apt-get install -y \
+    automake \
+    build-essential \
+    curl \
+
++COPY
+Chỉ thị COPY được dùng để copy file và thư mục từ hệ thống host tới image trong khi build.
+
++ WORKDIR
+Chỉ thị WORKDIR được dùng để thiết lập thư mục làm việc hiện tại cho bất kỳ chỉ thị RUN, CMD, ENTRYPOINT, COPY… trong quá trình build.
+
++ CMD
+Chỉ thị CMD được dùng để chạy các dịch vụ hoặc phần mềm có chứa bên trong image, cùng với bất kỳ tham số khác trong khi khởi chạy container. 
+CMD dùng cú pháp đơn giản sau đây: CMD ["executable","param1","param2"] , ví dụ : CMD ["apachectl", "-D", "FOREGROUND"]
+
++ EXPOSE
+Chỉ thị EXPOSE chỉ ra các port mà container sẽ lắng nghe cho các kết nối. 
+Sau đó bạn có thể liên kết các port hệ thống với container và dùng chúng.
+EXPOSE 80
+EXPOSE 443
+
++ENV
+Chỉ thị ENV được dùng để thiết lập biến môi trường cho các dịch vụ cụ thể của container.
+ENV PATH=$PATH:/usr/local/pgsql/bin/ \
+    PG_MAJOR=9.6.0
+
++VOLUME
+Chỉ thị VOLUME tạo một mount point với tên được chỉ định và đánh dấu nó là nơi giữ mount volume từ host bên ngoài hoặc container khác.
+VOLUME ["/data"]

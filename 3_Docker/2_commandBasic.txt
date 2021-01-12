@@ -1,0 +1,17 @@
+$ docker run --help
+$ docker run --version
+$ docker run hello-world // test 
+
+/////// Image
+$ docker images //để liệt kê tất cả images có sẵn trên máy tính chạy docker của bạn
+$ docker search "tên image" // tìm kiếm các images trên docker hub
+$ docker pull "tên image" // download image
+$ docker rmi "tên image" //xóa bất kỳ docker image từ hệ thống local
+
+/////// Container
+$ docker ps //để liệt kê các container đang chạy trên hệ thống hiện tại
+$ docker ps -a // tất cả
+$ docker run -it "tên container" //-it sẽ cung cấp một phiên tương tác với pseudo-TTY.
+$ docker inspect cc5d74cf8250 //Trong đó: cc5d74cf8250 là id container
+$ docker stop cc5d74cf8250
+$ docker rm cc5d74cf8250
