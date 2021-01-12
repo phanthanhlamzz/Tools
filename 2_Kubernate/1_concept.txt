@@ -1,0 +1,23 @@
+Kubernetes - k8s
+
+ref :
+https://viblo.asia/p/kubernetes-cac-khai-niem-co-ban-va-cach-khoi-tao-mot-kubernetes-cluster-Az45bD0NZxY
+
+
++ Clusters
+Một Kubernetes cluster là một tập các máy ảo hay máy vật lý được sử dụng bởi Kubernetes dùng để chạy các ứng dụng.
+
++ Nodes
+Kubernetes nodes là các máy ảo hay máy vật lý chạy kubernetes. 
+Các node này cần chạy Kubernetes và docker, và mỗi máy này là một docker host.
+
++ Pods
+Khi một ứng dụng được đóng gói thì ứng dụng đó sẽ có thể chạy trên một container độc lập, 
+tuy chúng ta có thể chạy container độc lập như cách khởi chạy một ứng dụng monolythic, 
+nhưng Kubernetes sẽ không chạy theo cách như vậy, Kubernetes sử dụng khái niệm pod để nhóm các container lại với nhau. 
+Một pod là một nhóm các container, các container này sẽ dùng chung tài nguyên và network, 
+các container trong một pod có thể duy trì giao tiếp với nhau như trên một máy chủ nhưng vẫn giữ được sự độc lập cần thiết.
+
+Với Kubernetes, đơn vị khi scale ứng dụng sẽ là scale các pods, 
+vì vậy nên các pods thường là nhóm các containers có cùng mục đích sử dụng, 
+ví dụ như một pod tập hợp 4 container chạy nginx + backend, và một pod tập hợp 2 container chạy frontend + nginx .v.v.
