@@ -1,0 +1,15 @@
+Docker – quản lý ports
+Docker containers chạy các dịch vụ bên trong nó trên các port được chỉ định cụ thể. 
+Để truy cập dịch vụ của một container đang chạy trên một port, 
+bạn cần liên kết container port với port trên Docker host (máy thật).
+
+$ docker run -it -p 8080:80 apache_image
+$ docker run -it -p 6603:3066 mysql_image
+
+8080,6603 là port trên máy thật (docker host)
+
+$ docker run -it -p 8080:80,8081:443 image_name
+$ docker run -it -p 127.0.0.1:8080:80,127.0.0.1:8081:443 image_name
+$ docker run -it -p 192.168.1.111:8080:80,92.168.1.111:8081:443 image_name
+
+https://vsudo.net/blog/docker-toan-tap.html

@@ -1,0 +1,29 @@
+Networking
+Docker cung cấp một tùy chọn để tạo và quản lý network riêng giữa các container. 
+Dùng lệnh docker network để quản lý Docker networking.
+
+$ docker network [options]
+
+$ docker network ls
+
+/// Tạo network
+Docker cung cấp nhiều loại network. Lệnh bên dưới sẽ tạo bridge network trên hệ thống của bạn.
+$ docker network create -d [network_type] [network_name]
+Ví dụ
+$ docker network create -d bridge my-bridge-network
+
+/// kết nối container với network
+Bạn có thể kết nối bất kỳ container nào tới một docker network đang tồn tại bằng cách sử dụng tên container hoặc ID.
+$ docker network connect [network_name] [container_name]
+Ví dụ
+$ docker network connect my-bridge-network centos
+
+/// Ngắt kết nối docker khỏi network
+$ docker network disconnect [network_name] [container_name]
+
+/// kiểm tra 
+$ docker network inspect my-bridge-network
+
+///Xóa Docker network
+$ docker network rm my-bridge-network network2 network3
+$ docker network prune // xóa tất cả các network ko dùng
