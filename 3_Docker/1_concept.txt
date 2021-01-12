@@ -1,0 +1,26 @@
+ref:
+https://topdev.vn/blog/docker-la-gi/
+
++ Docker Engine
+“Docker Engine” là phần core của Docker dùng để tạo, vận chuyển và chạy Docker Container. 
+Docker Engine cung cấp kiến trúc ứng dụng client-server với các thành phần chính sau đây:
+    - Một tiến trình chạy ngầm giúp server chạy liên tục
+    - REST API để nói chuyện với daemon và gửi các chỉ dẫn tới nó
+    - Giao diện dòng lệnh cho phía client
+
++ Docker Hub : là một “github for docker images”.
++ Images: là một khuôn mẫu để tạo một container
++ Container: là một instance của một image. Bạn có thể create, start, stop, move or delete container dựa trên Docker API hoặc Docker CLI.
++ Docker Client: là một công cụ giúp người dùng giao tiếp với Docker host.
++ Docker Daemon: lắng nghe các yêu cầu từ Docker Client để quản lý các đối tượng như Container, Image, Network và Volumes thông qua REST API. 
+Các Docker Daemon cũng giao tiếp với nhau để quản lý các Docker Service.
++ Dockerfile: là một tập tin bao gồm các chỉ dẫn để build một image .
++ Volumes: là phần dữ liệu được tạo ra khi container được khởi tạo.
+
+
+    Registry => Images => Container
++ Registry (Docker Hub) là server trung tâm nơi chứa các images original, 
+hoặc các bản images đã được cài đặt chỉnh sửa theo nhu cầu riêng biệt.
++ Images: là OS, một ứng dụng đã được cài đặt và đóng gói. Image chỉ có quyền đọc.
++ Container là bản thực thể của một image, được clone ra từ image, mọi người sẽ sử dụng và làm việc trên container là chính
++ Registry (Docker Hub) nằm ở server internet, còn images và container nằm ở máy người dùng.
