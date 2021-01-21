@@ -1,0 +1,7 @@
+https://huongdanjava.com/overview-about-mock-in-unit-test.html
+https://dev.to/nipunarora/using-mockito-for-java-unit-testing-28jp
+https://stacktraceguru.com/unittest/thenreturn-vs-thenanswer
+
+https://www.baeldung.com/mockito-annotations
+https://www.baeldung.com/java-spring-mockito-mock-mockbean
+https://stackoverflow.com/questions/10806345/runwithmockitojunitrunner-class-vs-mockitoannotations-initmocksthis
